@@ -15,7 +15,8 @@ def put_pieces_on_the_board():
     board[6] = [ Pawn(6, c, "BLACK") for c in range( len( collums_number) ) ]
 
 
-def print_board():
+
+def print_board( print_value = False ):
     string_row = '   '
     for c in collums_number:
         string_row += c+' '
@@ -23,8 +24,10 @@ def print_board():
     for r in range(len(row_letters)):
         string_row += row_letters[r]+'  ' 
         for c in range(len(collums_number)):
-            #string_row += str(board[r][c].value) + ' '
-            string_row += board[r][c].ascii_symbol + ' '
+            if print_value:
+                string_row += str(board[r][c].value) + ' '
+            else:
+                string_row += board[r][c].ascii_symbol + ' '
         string_row += '\n'
     print(string_row)
 
@@ -42,10 +45,15 @@ if __name__ == '__main__':
     put_pieces_on_the_board()
     print_board()
 
-    board[1][0].move(3,0, board)
-    board[1][2].move(3,3, board) 
-
+    print( board[6][0].move(4,0, board) )
     print_board()
+
+    print( board[7][0].move(5,0, board) )
+    print_board()
+
+    print( board[7][1].move(5,2, board ) )
+    print_board()
+
     
 
 
