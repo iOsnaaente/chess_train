@@ -28,7 +28,7 @@ class Piece:
     def move(self, row_goal : int, collum_goal : int, board : list) -> bool: 
         if self.value == 0:
             print('No piece available on here to move...')
-            return False 
+            return False
 
         row    = self.pos[0]
         collum = self.pos[1]

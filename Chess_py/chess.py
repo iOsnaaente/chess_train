@@ -45,9 +45,6 @@ if __name__ == '__main__':
     put_pieces_on_the_board()
     print_board()
 
-    print( board[6][0].move(4,0, board) )
-    print_board()
-
     print( board[7][0].move(5,0, board) )
     print_board()
 
